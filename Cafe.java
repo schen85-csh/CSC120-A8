@@ -27,6 +27,28 @@ public class Cafe extends Building implements CafeRequirements {
     }
     
     /**
+     * this method override the showOption, so the method in the cafe class can also be shown.
+     */
+    @Override
+    public void showOptions(){
+        super.showOptions();
+        System.out.println("+ sellCoffee(size, nSugarPackets, nCreams) \n + restock(nCoffeeOunces, nSugarPackets, nCreams, nCups)");
+    }
+
+    /**
+     * this method override goToFloor method. 
+     * In some coffee shops, first and second floors are designed for customer, and the third floor or the floors above second floor are designed for storage.
+     */
+    @Override
+    public void goToFloor(int n){
+        if (n != 1 || n != 2){
+            throw new RuntimeException("Sorry, only first and second floor are open to customers.");
+        }
+        super.goToFloor(n);
+    }
+
+
+    /**
      * this method is used to sell coffee and decrease the corresponding inventroy
      * If there is no enough inventory, the method restock will be triggered and retock the inventory
      * @param size the number of ounces of coffee
@@ -50,6 +72,16 @@ public class Cafe extends Building implements CafeRequirements {
         }
        
     }
+
+    /**
+     * this method overload the method sellCoffee().
+     * This method is used when customer only choose the size of the cup, but did not mention sugar and milk.
+     * In this case, we assume the customer do not need any sugar or milk.
+     * @param size
+     */
+    public void sellCoffee(int size){
+        this.sellCoffee(size,0,0);
+    }
     
     /**
      * the private method can only used by sellCoffee in order to keep the cafe in control
@@ -65,6 +97,16 @@ public class Cafe extends Building implements CafeRequirements {
         this.nCups += nCups;
     }
 
+    /**
+     * this method overload restock() method.
+     * This method is used for large-scale restocking and is suitable to be called before the cafe officially opens in the morning.
+     */
+    public void restock(){
+        this.nCoffeeOunces += 100;
+        this.nSugarPackets += 100;
+        this.nCreams += 100;
+        this.nCups += 100;
+    }
     public static void main(String[] args) {
         Cafe myCafe = new Cafe("Compass Cafe", "Neilson Drive", 2, 20, 10, 10, 5);
         myCafe.sellCoffee(12, 2, 3);
