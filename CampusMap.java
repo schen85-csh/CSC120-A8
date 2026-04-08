@@ -51,7 +51,7 @@ public class CampusMap {
         // House
         House cutter = new House("Cutter House", "10 Prospect St Northampton, MA 01063", 4, true, true);
         House ziskind = new House("Ziskind House", "10 Prospect St", 4, true, true);
-        House parsons = new House("Parsons House", "1 Parsons St", 5, true); 
+        House parsons = new House("Parsons House", "1 Parsons St", 5, true); // here is an overload method. In this case, there is no elevator in the house.
         House lamount = new House("Lamount House", "10 Prospect St", 5, true);
         myMap.addBuilding(cutter);
         myMap.addBuilding(ziskind);
@@ -67,19 +67,19 @@ public class CampusMap {
 
         System.out.println("\n--- Testing Overloaded Methods---");
         System.out.println("\n Testing house Overloading:");
-        cutter.moveIn("Julia","12345",2029);
+        cutter.moveIn("Julia","12345",2029); // this overload is for the students who move in the house but, their corresponding student obeject has noy been created.
 
         System.out.println("\n Testing Library Overloading:");
         neilson.checkOut("Java Programming");
-        neilson.checkOut("Java Programming", "Julia");
+        neilson.checkOut("Java Programming", "Julia"); // this overload method record the borrower's name.
         neilson.returnBook("Java Programming");
-        neilson.returnBook("Java Programming","Evans");
+        neilson.returnBook("Java Programming","Evans"); // this overload method record the people's name that return the book.
 
         System.out.println("\n Testing Cafe Overloading:");
-        compass.sellCoffee(12);
+        compass.sellCoffee(12);// In this overloaded method, we assume customer do not ask for any cream and sugar.
         compass.sellCoffee(16,2,1);
         cc.restock(25,25,25,25);
-        cc.restock();
+        cc.restock();// In this case, cafe made a large one-time replenishment of stock.
 
 
     }
