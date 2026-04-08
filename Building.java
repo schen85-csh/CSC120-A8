@@ -21,6 +21,7 @@ public class Building {
         this(name, address, 1); // Call full constructor with hard-coded # floors
     }
 
+
     /* Full constructor */
     public Building(String name, String address, int nFloors) {
         if (name != null) { this.name = name; }
