@@ -27,6 +27,7 @@ public class Library extends Building implements LibraryRequirements {
      * This mathod adds books into library's collection
      * @param title the title of the book that we want to add into library's collection.
      */
+    
     public void addTitle(String title){
       if (this.collection.containsKey(title)) {
         throw new RuntimeException(title + " is already in the collection.");

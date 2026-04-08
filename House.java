@@ -44,6 +44,7 @@ public class House extends Building implements HouseRequirements {
   /**
    * override showOptions
    */
+  @Override
     public void showOptions(){
       super.showOptions();
       System.out.println("+ moveIn(s) \n + moveOut(s) \n + isResident(s)");
@@ -98,6 +99,7 @@ public class House extends Building implements HouseRequirements {
     /**
      * override goToFloor
      */
+    @Override
     public void goToFloor(int n){
       if (!hasElevator){
         if (this.activeFloor != -1){
