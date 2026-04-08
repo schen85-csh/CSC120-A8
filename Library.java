@@ -23,6 +23,25 @@ public class Library extends Building implements LibraryRequirements {
       System.out.println("You have built a library: 📖");
     }
   
+
+    /**
+     * override showOption to make the methods that only included in library can be shown when useing this method.
+     */
+    @Override
+    public void showOptions(){
+      super.showOptions();
+      System.out.println("+ addTitle(title) \n + removeTitle(title) \n + checkOut(title) \n + returnBook(title) \n + containsTitle(title) \n + isAvailable(title) \n + printCollection()");
+    }
+
+    /**
+     * Most libraries have elevators, so we do not need to override this method.
+     * @param n tells the floor that we want to go.
+     */
+    @Override
+    public void goToFloor(int n){
+      super.goToFloor(n);
+    }
+
     /**
      * This mathod adds books into library's collection
      * @param title the title of the book that we want to add into library's collection.
@@ -55,6 +74,17 @@ public class Library extends Building implements LibraryRequirements {
     }
     
     /**
+     * this method overload the method checkOut(). 
+     * This overloaded version allows people to record their name when they borrow the books.
+     * @param title tells the title of books that people checked out
+     * @param borrowerName tells the people who borrow the book.
+     */
+    public void checkOut(String title, String borrowerName){
+      this.checkOut(title);
+    }
+
+    
+    /**
      * this method is used to change the status of a book after it is returned
      * @param title the title of the book that is returned
      */
@@ -62,6 +92,15 @@ public class Library extends Building implements LibraryRequirements {
       this.collection.replace(title, true);
     }
 
+    /**
+     * this method overload the returnBook() method.
+     * This method allows the borrower to record their name.
+     * @param title tells the title of the borrowed books.
+     * @param name tells the borrower's name.
+     */
+    public void returnBook(String title, String name){
+      this.returnBook(title);
+    }
     /**
      * This method is used to check if the books exist in the library collection
      * @param title the title of the book
@@ -79,6 +118,7 @@ public class Library extends Building implements LibraryRequirements {
     public boolean isAvailable(String title){
       return this.collection.getOrDefault(title, false);
     }
+
 
     /**
      * this mathod prints all the collections and the books' status

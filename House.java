@@ -98,6 +98,7 @@ public class House extends Building implements HouseRequirements {
     
     /**
      * override goToFloor
+     * @param n tells the floor that we want to go.
      */
     @Override
     public void goToFloor(int n){
