@@ -68,6 +68,15 @@ public class House extends Building implements HouseRequirements {
     }
 
     /**
+     * This method is a overloading method for the method moveIn() above.
+     * This method can be used when we only know the student's name, student id and class year,but the student object has not been created yet.
+     * 
+     */
+    public void moveIn(String name, String id, int classYear){
+      this.moveIn(new Student(name, id, classYear));
+    }
+
+    /**
      * This method is for students to move out the house
      * @param s the student who moves out from the house
      * @return the student who moves out from the house
