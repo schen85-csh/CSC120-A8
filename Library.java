@@ -30,7 +30,7 @@ public class Library extends Building implements LibraryRequirements {
     @Override
     public void showOptions(){
       super.showOptions();
-      System.out.println("+ addTitle(title) \n + removeTitle(title) \n + checkOut(title) \n + returnBook(title) \n + containsTitle(title) \n + isAvailable(title) \n + printCollection()");
+      System.out.println("+ addTitle(title) \n + removeTitle(title) \n + checkOut(title) \n + checkOut(title, name) \n + returnBook(title) \n + returnBook(title, name) \n + containsTitle(title) \n + isAvailable(title) \n + printCollection()");
     }
 
     /**
