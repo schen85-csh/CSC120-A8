@@ -41,7 +41,7 @@ public class Cafe extends Building implements CafeRequirements {
      */
     @Override
     public void goToFloor(int n){
-        if (n != 1 || n != 2){
+        if (n > 2){
             throw new RuntimeException("Sorry, only first and second floor are open to customers.");
         }
         super.goToFloor(n);
@@ -75,8 +75,8 @@ public class Cafe extends Building implements CafeRequirements {
 
     /**
      * this method overload the method sellCoffee().
-     * This method is used when customer only choose the size of the cup, but did not mention sugar and milk.
-     * In this case, we assume the customer do not need any sugar or milk.
+     * This method is used when customer only choose the size of the cup, but did not mention sugar and creams.
+     * In this case, we assume the customer do not need any sugar or creams.
      * @param size
      */
     public void sellCoffee(int size){
@@ -90,7 +90,7 @@ public class Cafe extends Building implements CafeRequirements {
      * @param nCreams the number of "splashes" of cream that is added
      * @param nCups the number of cups that is added 
      */
-    private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
+    public void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
         this.nCoffeeOunces += nCoffeeOunces;
         this.nSugarPackets += nSugarPackets;
         this.nCreams += nCreams;
