@@ -47,7 +47,7 @@ public class House extends Building implements HouseRequirements {
   @Override
     public void showOptions(){
       super.showOptions();
-      System.out.println("+ moveIn(s) \n + moveOut(s) \n + isResident(s)");
+      System.out.println("+ moveIn(s) \n + moveIn(name, id, classYear) \n + moveOut(s) \n + isResident(s)");
     }
 
     /** @return whether the house contains a dining room */
